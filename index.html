@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Epilef</title>
+    <script>
+        function miFuncion() {
+            var comentario = document.getElementById("comentario").value;  // Obtén el comentario del textarea
+            var contenedor = document.getElementById("comentarios");  // Obtén el contenedor donde se mostrarán los comentarios
+            
+            // Si hay algún comentario, lo agregamos a la lista de comentarios en la página
+            if (comentario.trim() !== "") {
+                var nuevoComentario = document.createElement("p");  // Creamos un nuevo párrafo
+                nuevoComentario.textContent = comentario;  // Asignamos el comentario al párrafo
+                contenedor.appendChild(nuevoComentario);  // Añadimos el nuevo párrafo al contenedor
+                document.getElementById("comentario").value = "";  // Limpiamos el textarea después de agregar el comentario
+            } else {
+                window.alert("Por favor, ingresa un comentario.");  // Alerta si el textarea está vacío
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="/formulario" method="GET">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" />
+        <button type="button" onclick="miFuncion()">Enviar</button>
+    </form>
+    <br>
+
+    <label for="comentario">Comentario</label>
+    <textarea cols="50" rows="10" id="comentario" placeholder="Ingresa comentario" name="comentario"></textarea>
+
+    <h1>Mi head</h1>
+    <h2>Mi head</h2>
+    <hr>
+    <h3>3 head</h3>
+    <h4>4</h4>
+    <h5>5</h5>
+    <h6>6</h6>
+    <p>felimuy feliz</p>
+    <p>triste mu triste <span style="color:blue;"> hola</span></p>
+    <a target="_blank" href="https://www.youtube.com/@AstroTonto">Canal de Youtube</a>
+    <hr>
+    <img src="Img/Ajedrecito.png" width="400"/>
+
+    <!-- Contenedor donde se mostrarán los comentarios -->
+    <div id="comentarios">
+        <h3>Comentarios:</h3>
+    </div>
+
+</body>
+</html>
+
+
